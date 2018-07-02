@@ -11,7 +11,8 @@
     
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
 </head>
 
@@ -27,9 +28,6 @@
 		<div class="collapse navbar-collapse" id="navbarColor02">
 
 			<ul class="navbar-nav mr-auto">
-				<li class="nav-item">
-					<a class="nav-link active" href="index.html">Home</a>
-				</li>
 				<li class="nav-item">
 					<a class="nav-link" href="projects.html">Projects</a>
 				</li>
@@ -65,10 +63,53 @@
 
 	<div class="container">
 
+		<!-- Slideshow -->
+		<div class="w3-content w3-display-container" style="max-width: 900px;">
+			<img class="mySlides" style="width:100%" src="images/personal/norad1.jpg">
+			<img class="mySlides" style="width:100%" src="images/personal/pristine_con1.jpg">
 
+			<button class="w3-button w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
+			<button class="w3-button w3-display-right" onclick="plusDivs(+1)">&#10095;</button>
+		</div>
+		<br>
+		<br>
+
+		<!-- Overview Card -->
+		<div class="col-xs-12 col-md-12 col-lg-12">
+			<div class="card text-white bg-dark mb-3">
+				<h2 class="card-header" style="text-align: center;">Welcome!</h2>
+				<div class="card-body">
+					<p class="card-text" style="text-align: center;">
+						My name is Christian Ensz and I am a Data Analyst/Scientist from Kansas City, MO. My aim is to combine my love two loves of sports and data - I see an untapped world of numbers and metrics in sports, just waiting to be utilized. Even the world of E-Sports fascinate me - our world produces so much data that we barely take advantage of. Come check out some of the interesting projects I've been working on in the meantime while I pursue my career in Data Analytics.
+					</p>
+				</div>
+			</div>
+		</div>
 
         
     </div>
     
 </body>
+
+<script>
+	var slideIndex = 1;
+	showDivs(slideIndex);
+
+	function plusDivs(n) {
+		showDivs(slideIndex += n);
+	}
+
+	function showDivs(n) {
+		var i;
+		var x = document.getElementsByClassName("mySlides");
+		if (n > x.length) {slideIndex = 1} 
+		if (n < 1) {slideIndex = x.length} ;
+		for (i = 0; i < x.length; i++) {
+			x[i].style.display = "none"; 
+		}
+		x[slideIndex-1].style.display = "block"; 
+	}
+</script>
+
+
 </html>
